@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- About -->
+
+    <!-- Toolbar -->
+    <string name="app_name">Member Approval  </string>
+
+    <string name="tab_title_record">Record</string>
+    <string name="tab_title_saved_recordings">Saved Voice Notes</string>
+
+    <!-- Toasts -->
+
+    <!-- Notifications -->
+
+    <!-- Dialogs -->
+    <string name="dialog_title_delete">Confirm Delete...</string>
+    <string name="dialog_text_delete">Are you sure you would like to delete this file?</string>
+    <string name="dialog_title_options">Options</string>
+
+    <string name="dialog_file_share">Share File</string>
+    <string name="dialog_action_cancel">Cancel</string>
+    <string name="dialog_action_yes">Yes</string>
+    <string name="dialog_action_no">No</string>
+
+    <string name="default_file_name">My Recording</string>
+    <string name="record_prompt">Tap the mic to start and speak the sentence above</string>
+
+
+    <string name="send_to">Send to</string>
+    <string name="via">Share App Via</string>
+    <string name="sharetxt">Share Transcription</string>
+
+    <!-- Preferences -->
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="notificationticker">Voice Biometric Marati</string>
+
+    <string name="ad_unit_id">ca-app-pub-3787763876449878/4674988208</string>
+    <string name="app_id">ca-app-pub-3787763876449878~8614233212</string>
+    <string name="share_url">\n Speak in Marathi and convert your voice to text in Marathi. Share the notes on any social media. Get your hands off the keyboard. \n \n Now you can send texts in Marathi on any messaging platform just by speaking into our app. \n \n Share the app now!! \n http://bit.ly/MarathiVoiceNotes</string>
+    <string name="policy_url">https://voicenotesindia.github.io/</string>
+    <string name="feeback_title">Enter your Feedback</string>
+    <string name="ok_positive_button">OKAY</string>
+    <string name="enter_input">Please Enter Input</string>
+    <string name="feeback_submitted">Feedback Submitted</string>
+    <string name="cancel_negative_button">CANCEL</string>
+    <string name="new_version_title">New version available</string>
+    <string name="update_app_message">Please, update app to new version to continue reposting.</string>
+    <string name="update_positive_button">Update</string>
+    <string name="no_negative_button">No, thanks</string>
+    <string name="per_granted">Permission Granted</string>
+    <string name="per_denied">Permission Denied. Buttons Disabled!</string>
+    <string name="back_message">Please click BACK again to exit</string>
+    <string name="powered_by">\n \n Powered by Marathi Voice Notes. \n Use it to get transcription in Marathi. \n Install now!! \n http://bit.ly/MarathiVoiceNotes</string>
+    <string name="trans_success">Transcript Edited Successfully</string>
+    <string name="path_to_file">/SoundRecorder/Marathi/</string>
+    <string name="start_button">Tap the button to start and speak the sentence above</string>
+    <string name="timer_first">00:00</string>
+    <string name="gnani">gnani</string>
+    <string name="yes">yes</string>
+    <string name="stop_inactive">Recording stopped due to inactivity. \n Tap to record again</string>
+    <string name="path_mara">/SoundRecorder/Marathi</string>
+    <string name="delete_all_files_message">Do you wish to delete all files?</string>
+<!--    <string name="yes_positive_button">Yes</string>-->
+    <string name="stt_api">asr.gnani.ai</string>
+    <string name="token">token</string>
+    <string name="lang">lang</string>
+    <string name="access_key">accesskey</string>
+    <string name="audio_format">audioformat</string>
+    <string name="encoding">encoding</string>
+    <string name="silence">silence</string>
+    <string name="email">email</string>
+    <string name="lang_value">mar_IN</string>
+    <string name="audio_for_value">wav</string>
+    <string name="encoding_value">pcm16</string>
+    <string name="dhwani">Dhwani</string>
+    <string name="marathi_voice_notes">Marathi Voice Notes</string>
+    <string name="powered_by_gnani_ai">Powered by GNANI.AI</string>
+    <string name="for_non_commercial_use_only">For Non-Commercial use only</string>
+    <string name="actual_trans">Actual Trans</string>
+    <string name="file_name_mp4">file_name.mp4</string>
+    <string name="save">Save</string>
+    <string name="welcome">Welcome</string>
+    <string name="login_sign_up">Login/Sign Up</string>
+
+
+
+    <string-array name="country_arrays">
+        <item>Options</item>
+        <item>Enroll</item>
+                <item>Test</item>
+        <item>De-Enroll</item>
+
+
+    </string-array>
+
+</resources>

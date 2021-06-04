@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "898347783177",
+    "firebase_url": "https://marathi-voice-notes.firebaseio.com",
+    "project_id": "marathi-voice-notes",
+    "storage_bucket": "marathi-voice-notes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898347783177:android:6d9d1e0d2da2ed021b14d8",
+        "android_client_info": {
+          "package_name": "com.voicenotes.marathi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898347783177-3pvhlq7sr6k5m38pn6iiojg35m6dfqgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.voicenotes.marathi",
+            "certificate_hash": "532fc4d3bbedaeae37754d9d9f9c0eb2405550c7"
+          }
+        },
+        {
+          "client_id": "898347783177-rdnm6lf4eqbeguon43f1dnaq20hpi4e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMhbn6O0XDlmJT_Un04yaUN2Hb0rS1vP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898347783177-rdnm6lf4eqbeguon43f1dnaq20hpi4e5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

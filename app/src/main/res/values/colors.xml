@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#08617c</color>
+    <color name="primary_dark">#053e50</color>
+    <color name="white">#FFFFFF</color>
+    <color name="tab_strip">#B42929</color>
+
+
+    <!-- Screens background color-->
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#14a895</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#14a895</color>
+    <color name="dot_dark_screen4">#14a895</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#08617c</color>
+    <color name="dot_light_screen2">#08617c</color>
+    <color name="dot_light_screen3">#08617c</color>
+    <color name="dot_light_screen4">#08617c</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+</resources>

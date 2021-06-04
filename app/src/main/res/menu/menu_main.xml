@@ -1,0 +1,19 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/act_en"
+        android:orderInCategory="101"
+        android:title="Enroll" />
+
+    <item
+        android:id="@+id/act_test"
+        android:orderInCategory="101"
+        android:title="Test" />
+    <item
+        android:id="@+id/act_de"
+        android:orderInCategory="101"
+        android:title="De-Enroll" />
+</menu>

@@ -1,0 +1,167 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.protobuf'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+def keystoreProperties = new Properties()
+
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+ext {
+    supportLibraryVersion = '29.0.0'
+    grpcVersion = '1.16.1'
+}
+
+
+android {
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.voicenotes.marathi"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 3
+        versionName "1.0.2"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config
+    }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+
+    buildTypes {
+        release {
+            //multiDexEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "TOKEN", project.properties['token']
+            buildConfigField "String", "AKEY", project.properties['akey']
+            signingConfig signingConfigs.config
+        }
+
+        debug {
+
+            debuggable true
+            buildConfigField "String", "TOKEN", project.properties['token']
+            buildConfigField "String", "AKEY", project.properties['akey']
+        }
+
+        android.applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def fileName = "voicenotesmarathi_" + buildType.name + "-" + variant.versionName + "_" + output.versionCode + ".apk"
+                output.outputFileName = new File(fileName)
+            }
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.2'
+        resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryVersion"
+        exclude group: 'com.google.firebase', module: 'protolite-well-known-types'
+    }
+
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.10.0'
+    }
+    plugins {
+        javalite {
+            artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0"
+        }
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+                grpc {
+                    // Options added to --grpc_out
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    implementation "com.android.support:cardview-v7:28.0.0"
+//    implementation "com.android.support:recyclerview-v7:28.0.0"
+
+    // gRPC
+    implementation "io.grpc:grpc-okhttp:$grpcVersion"
+    implementation "io.grpc:grpc-protobuf-lite:$grpcVersion"
+    implementation "io.grpc:grpc-stub:$grpcVersion"
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    protobuf 'com.google.protobuf:protobuf-java:3.10.0'
+
+    // implementation 'com.rodolfonavalon:ShapeRippleLibrary:1.0.0'
+
+
+
+    /// implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+
+    //View Injection Library
+//    implementation 'com.jakewharton:butterknife:10.2.0'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    implementation 'com.google.android.material:material:1.2.0-alpha04'
+
+    //ShapeRippleLibrary
+    // implementation 'com.rodolfonavalon:ShapeRippleLibrary:1.0.0'
+
+
+    implementation 'com.melnykov:floatingactionbutton:1.3.0'
+
+    implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
+
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.3'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-config:19.1.1'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    //implementation 'com.google.android.gms:play-services-ads:18.3.0'
+
+    // compile 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+//    implementation("com.google.firebase:firebase-firestore:21.2.0") {
+//        exclude group: 'com.google.firebase', module: 'protolite-well-known-types'
+//    }
+
+    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+//    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.voicenotes.marathi">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.voicenotes.marathi.App"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@drawable/edit"
+        android:label="@string/app_name"
+
+        android:theme="@style/AppTheme"
+        tools:replace="icon, label,android:allowBackup"
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="q">
+
+
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="@string/app_id"/>
+
+
+        <activity
+            android:name="com.voicenotes.marathi.activities.MainActivity"
+            android:label="Member Approval"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+
+<!--              <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+
+        </activity>
+
+
+
+        <activity
+            android:name="com.voicenotes.marathi.activities.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+
+
+
+
+        </activity>
+
+        <activity
+            android:name="com.voicenotes.marathi.activities.StartScreenActivity"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.voicenotes.marathi.fileprovider_english"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <service android:name="com.voicenotes.marathi.grpc.SpeechService" />
+
+        <service
+            android:name="com.voicenotes.marathi.FirebaseMessaging"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+        </service>
+
+
+        <activity
+            android:name="com.voicenotes.marathi.Welcome"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.voicenotes.marathi.activities.NotificationActivity"
+            android:parentActivityName="com.voicenotes.marathi.activities.MainActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>
