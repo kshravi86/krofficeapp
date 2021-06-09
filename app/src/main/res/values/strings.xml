@@ -3,7 +3,7 @@
     <!-- About -->
 
     <!-- Toolbar -->
-    <string name="app_name">Member Approval  </string>
+    <string name="app_name">Office Approval  </string>
 
     <string name="tab_title_record">Record</string>
     <string name="tab_title_saved_recordings">Saved Voice Notes</string>
@@ -97,5 +97,14 @@
 
 
     </string-array>
+
+    <string-array name="optionsgiven">
+        <item>Member</item>
+        <item>Office</item>
+
+    </string-array>
+
+
+
 
 </resources>

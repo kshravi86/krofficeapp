@@ -138,7 +138,7 @@ public class RecordFragment extends Fragment {
     //long timeWhenPaused = 0; //stores time when user clicks pause button
    // private FirebaseAnalytics mFirebaseAnalytics;
 
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
    // private SpeechService mSpeechService;
 
   //  private DBHelper mDatabase;
@@ -180,7 +180,7 @@ public class RecordFragment extends Fragment {
         super.onCreate(savedInstanceState);
         position = getArguments().getInt(ARG_POSITION);
         //mDatabase = new DBHelper(getActivity().getApplicationContext());
-        auth = FirebaseAuth.getInstance();
+//        auth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -320,7 +320,7 @@ public class RecordFragment extends Fragment {
 
                         .build();
 
-                Request request = new Request.Builder().url("http://13.90.34.105:8108/api/getall")
+                Request request = new Request.Builder().url("http://13.90.34.105:8108/api/getforofficeapproval")
 
                         .post(requestBody).build();
 
@@ -442,12 +442,12 @@ public class RecordFragment extends Fragment {
 
 
                             Button labelName2=new Button(getActivity());
-                            final int index = count;
+                            final String index = key.toUpperCase();
                             labelName2.setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View v) {
 
                                     Toast.makeText(getActivity(),"Please Enter Input"+index,Toast.LENGTH_LONG).show();
-                                    new DownloadInfoOfWeatherNew().execute(String.valueOf(index));
+                                    new DownloadInfoOfWeatherNew().execute((index));
 
 
                                 }
@@ -555,7 +555,7 @@ public class RecordFragment extends Fragment {
 
                         .build();
 
-                Request request = new Request.Builder().url("http://13.90.34.105:8108/api/update")
+                Request request = new Request.Builder().url("http://13.90.34.105:8108/api/updateoffice")
 
                         .post(requestBody).build();
 

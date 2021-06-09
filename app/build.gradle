@@ -27,7 +27,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.voicenotes.marathi"
+        applicationId "com.voicenotes.marathioffice"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 3
@@ -163,5 +163,3 @@ dependencies {
 //    implementation 'com.google.android.gms:play-services-ads:18.2.0'
 
 }
-
-apply plugin: 'com.google.gms.google-services'

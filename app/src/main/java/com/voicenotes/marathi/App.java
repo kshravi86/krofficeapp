@@ -26,25 +26,8 @@ public class App extends Application {
          */
     super.onCreate();
 
-        final FirebaseRemoteConfig firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
-        // set in-App defaults
-        Map<String, Object> remoteConfigDefaults = new HashMap();
-        remoteConfigDefaults.put(ForceUpdateChecker.KEY_UPDATE_REQUIRED, false);
-        remoteConfigDefaults.put(ForceUpdateChecker.KEY_CURRENT_VERSION, "1.0.0");
-        remoteConfigDefaults.put(ForceUpdateChecker.KEY_UPDATE_URL,
-                "https://play.google.com/store/apps/details?id=com.sembozdemir.renstagram");
 
-        firebaseRemoteConfig.setDefaults(remoteConfigDefaults);
-        firebaseRemoteConfig.fetch(60) // fetch every minutes
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "remote config is fetched.");
-                            firebaseRemoteConfig.activateFetched();
-                        }
-                    }
-                });
+
     }
 }

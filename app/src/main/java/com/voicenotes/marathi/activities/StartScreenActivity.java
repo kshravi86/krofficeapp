@@ -224,7 +224,7 @@ public class StartScreenActivity extends AppCompatActivity {
 
                 StartScreenActivity.setDefaults("id",strid,getApplicationContext());
                 if(strname!=null && strid!=null){
-                    if(strname.contains("admin") && strid.contains("admin")){
+                    if(strname.contains("office") && strid.contains("office")){
 
                 Intent intent=new Intent(StartScreenActivity.this,MainActivity.class);
                 startActivity(intent);

@@ -72,9 +72,9 @@ public class MainActivity extends AppCompatActivity implements ForceUpdateChecke
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private static final int REQUEST_PERMISSION_CODE = 1;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Feedback");
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+//    FirebaseDatabase database = FirebaseDatabase.getInstance();
+//    DatabaseReference myRef = database.getReference("Feedback");
+//    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private PagerSlidingTabStrip tabs;
     private ViewPager pager;
     //private com.melnykov.fab.FloatingActionButton shareButton;
